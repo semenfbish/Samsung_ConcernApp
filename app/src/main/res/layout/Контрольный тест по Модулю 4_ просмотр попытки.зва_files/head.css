@@ -1,0 +1,143 @@
+.extblock {
+    font-size: 0.9rem;
+    display: block;
+    background: #F5F5F5;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-position: 1rem 1rem;
+    background-size: 4.0rem 4.0rem;
+    background-repeat: no-repeat;
+    padding: 1rem 1rem 1rem 6rem;
+    min-height: 6rem;
+}
+
+.extblock p {
+    text-align: justify;
+    margin-bottom: 0.5rem;
+}
+
+.extblock-info {
+    background-image: url('../img/svg/info.svg');
+}
+.extblock-as {
+    background-image: url('../img/svg/astudio.svg');
+}
+.extblock-idea {
+    background-image: url('../img/svg/intellij.svg');
+}
+.extblock-kotlin {
+    background-image: url('../img/svg/kotlin.svg');
+}
+.extblock-eclipse {
+    background-image: url('../img/svg/eclipse.svg');
+}
+@media (min-width: 576px) {
+    #id_intake_id,
+    #id_leaders{
+        width:25rem;
+    }
+}
+
+.suggestions-hint, .suggestions-promo {
+    display:none;
+    opacity: 0.01;
+}
+div.suggestions-promo a {
+    width:1px;
+    height:1px;
+}
+span.social {
+    width:1rem;
+    height:1rem;
+    margin-right:0.1rem;
+    background-size: 1rem 1rem;
+    display: inline-block;
+    margin-top:0.2rem;
+}
+.vk {
+    background-image: url("../img/svg/vk.svg");
+}
+.facebook {
+    background-image: url("../img/svg/facebook.svg");
+}
+.telegram {
+    background-image: url("../img/svg/telegram.svg");
+}
+.github {
+    background-image: url("../img/svg/github.svg");
+}
+.envelope {
+    background-image: url("../img/svg/email.svg");
+}
+
+.checkmessagesitems {
+    max-height: 30rem;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+}
+.checkmessagesitems li {
+    font-size:0.9em;
+    list-style: none;
+    margin: 0.25rem 0.1rem;
+    padding: 0.5rem;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.checkmessagesitems blockquote {
+    font-size:0.9em;
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    margin-right: 1rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+.checkmessagesitems .linetitle {
+    font-weight: bold;
+}
+.checkmessagesitems .setchecked {
+    font-size: 2em;
+    float: right;
+    margin: 0;
+    line-height: 0.5em;
+}
+.checkmessagesitems blockquote .messagedate {
+    margin:0;
+    text-align: right;
+    color:#999;
+}
+.checkmessagesblock .buttons {
+    margin: 0.5rem 0 0 0;
+    padding: 5px;
+}
+
+.quiz-password {
+   /* display: none;*/
+    transition: 0s;
+    opacity: 0;
+    font-weight: bold;
+    color: #DDD;
+}
+.quiz-password-display {
+    transition: 0s;
+    cursor: wait;
+}
+.quiz-password-eye {
+    display: inline;
+}
+.quiz-password-display::after {
+    content: '  ☚';
+}
+.quiz-password-display:hover .quiz-password {
+    /*display: inline;*/
+    opacity: 1;
+    transition-delay: 1s;
+    cursor: default;
+}
+.quiz-password-display:hover .quiz-password-eye {
+    display: none;
+}
