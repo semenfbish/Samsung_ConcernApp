@@ -21,6 +21,15 @@
         android:theme="@style/Theme.Concern"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <service android:name="IME"
+            android:label="@string/ime"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            >
+            <meta-data android:name="android.view.im" android:resource="@layout/method"/>
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+        </service>
         <activity android:name=".HumList"></activity>
         <activity android:name=".Sprav" />
         <activity android:name=".Fynfyrie" />

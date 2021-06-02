@@ -8,6 +8,7 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,8 +23,11 @@ import be.tarsos.dsp.pitch.PitchDetectionHandler;
 import be.tarsos.dsp.pitch.PitchDetectionResult;
 import be.tarsos.dsp.pitch.PitchProcessor;
 
+import static java.lang.Thread.sleep;
+
 public class Fynfyrie extends AppCompatActivity {
-    TextView textView27, textView19, textView22, textView23, textView26, textView21, textView17, textView24, textView25,textView28,textView33;
+    TextView textView27, textView19, textView22, textView23, textView26, textView21, textView17, textView24, textView28, textView33;
+    Boolean ROn = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +41,6 @@ public class Fynfyrie extends AppCompatActivity {
         textView21 = findViewById(R.id.textView21);
         textView17 = findViewById(R.id.textView17);
         textView24 = findViewById(R.id.textView24);
-        textView25 = findViewById(R.id.textView25);
         textView28 = findViewById(R.id.textView28);
         textView33 = findViewById(R.id.textView33);
         textView27.setBackgroundColor(Color.RED);
@@ -48,7 +51,7 @@ public class Fynfyrie extends AppCompatActivity {
         textView21.setBackgroundColor(Color.RED);
         textView17.setBackgroundColor(Color.RED);
         textView24.setBackgroundColor(Color.RED);
-        textView25.setBackgroundColor(Color.RED);
+        new DEE().execute();
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -81,6 +84,49 @@ public class Fynfyrie extends AppCompatActivity {
         }
 
     }
+
+    class DEE extends AsyncTask {
+
+        @Override
+        protected Void doInBackground(Object[] objects) {
+            while (ROn) {
+                try {
+                    //
+                    textView27.setBackgroundColor(Color.GREEN);
+                    textView22.setBackgroundColor(Color.GREEN);
+                    textView26.setBackgroundColor(Color.GREEN);
+                    textView17.setBackgroundColor(Color.GREEN);
+                    //
+                    textView19.setBackgroundColor(Color.RED);
+                    textView23.setBackgroundColor(Color.RED);
+                    textView21.setBackgroundColor(Color.RED);
+                    textView24.setBackgroundColor(Color.RED);
+                    //
+                    sleep(250);
+                    //
+                    textView27.setBackgroundColor(Color.RED);
+                    textView22.setBackgroundColor(Color.RED);
+                    textView26.setBackgroundColor(Color.RED);
+                    textView17.setBackgroundColor(Color.RED);
+                    //
+                    textView19.setBackgroundColor(Color.GREEN);
+                    textView23.setBackgroundColor(Color.GREEN);
+                    textView21.setBackgroundColor(Color.GREEN);
+                    textView24.setBackgroundColor(Color.GREEN);
+                    //
+                    sleep(250);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                        }
+
+                    });
+                } catch (Exception e) {
+                }
+                }
+                return null;
+            }
+        }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
@@ -135,14 +181,16 @@ public class Fynfyrie extends AppCompatActivity {
 
         slyxach((int) pitchInHz);
     }
+    @SuppressLint("SetTextI18n")
     private void slyxach(int pitchInHz){
         if (pitchInHz > 100 && pitchInHz < 150) {
-            textView27.setBackgroundColor(Color.GREEN);
-            textView28.setText("Совет №"  +pitchInHz + ". Слышится хорошо засушёный клён, ваша гитара скорее всего уже отвинтажилась со временем.");
+            textView28.setText("Совет №"  +pitchInHz + ". Всегда Играйте стоя, таким образом вы создаёте себе зону комфорта.");
         }
-        if (pitchInHz > 0 && pitchInHz < 51) {
-            textView27.setBackgroundColor(Color.GREEN);
-            textView28.setText("Совет №"  +pitchInHz + ". Cлышатся нотки Болотного Ясеня, а вот это уже не хорошо, советую обратиться к мастеру с целью замены его на другое более благородное дерево. Но, есть и хорошая новость, ваш топ гитары состоит из двух досок, а это координально влияет на сустейн гитары.");
+        if (pitchInHz > 150 && pitchInHz < 200) {
+            textView28.setText("Совет №"  +pitchInHz + ". Никогда не верьте гитаристам, обсуждающих влияние дерева на звук элестрогитары.");
+        }
+        if (pitchInHz > 200 && pitchInHz < 250){
+            textView28.setText("Совет №"  +pitchInHz + ". Держите медиатор так, как захотите. Есть преподователи, которые рассказывают про стандарты хвата. Это слушать не стоит, все мы разные.");
         }
     }
 }
