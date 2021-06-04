@@ -25,7 +25,7 @@ public class Rating extends AppCompatActivity{
     TextView textView5, textView46, textView4,textView44;
     EditText editTextTextPersonName;
     public SQLiteDatabase db;
-    static RaTingSQL RAT;
+    static RaTingSQL Hum;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +35,8 @@ public class Rating extends AppCompatActivity{
         int defaultValue = 0;
         Intent intent = getIntent();
         T = intent.getIntExtra("Time", defaultValue);
-        RAT = new RaTingSQL(this, "RAT", null, 1);
-        db = RAT.getReadableDatabase();
+        Hum = new RaTingSQL(this, "Hum", null, 1);
+        db = Hum.getReadableDatabase();
         textView5 = findViewById(R.id.textView5);
         textView4 = findViewById(R.id.textView4);
         textView46 = findViewById(R.id.textView46);
@@ -51,9 +51,9 @@ public class Rating extends AppCompatActivity{
             if (editTextTextPersonName.getText().toString().equals("")){
                 Toast.makeText(getApplicationContext(), "Поля не полные!", Toast.LENGTH_SHORT).show();
             } else {
-                Intent intent1 = new Intent(this, Rating.class);
+                Intent intent1 = new Intent(this, HumList.class);
                 db.execSQL("INSERT INTO RATING(TIME, NAME) VALUES ('"+Time+"','"+Name+"')");
-
+                startActivity(intent1);
             }
         });
     }

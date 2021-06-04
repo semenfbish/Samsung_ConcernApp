@@ -8,6 +8,9 @@ import androidx.annotation.Nullable;
 
 public class RaTingSQL extends SQLiteOpenHelper {
     static SQLiteDatabase db;
+    static final String TIME = "TIME";
+    static final String NAME = "NAME";
+    static final String RATING = "RATING";
     public RaTingSQL(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -15,11 +18,11 @@ public class RaTingSQL extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         this.db = db;
-        String RAT = "CREATE TABLE RATING" +
-                "    (id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "    TIME  TEXT," +
-                "NAME TEXT NOT NULL)";
-        db.execSQL(RAT);
+        String Hum = "CREATE TABLE '"+RATING+"'" +
+                "    ( _id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "    '"+TIME+"'  TEXT," +
+                "'"+NAME+"' TEXT NOT NULL)";
+        db.execSQL(Hum);
     }
 
     @Override
