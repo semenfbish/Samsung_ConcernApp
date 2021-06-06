@@ -23,8 +23,7 @@ public class HumList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_hum_list);
         header = (TextView) findViewById(R.id.header);
         userList = (ListView) findViewById(R.id.list);
 
@@ -47,7 +46,7 @@ public class HumList extends AppCompatActivity {
         // создаем адаптер, передаем в него курсор
         userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
                 userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
-        header.setText("Рейтинг Игроков: " + userCursor.getCount());
+        header.setText("Рейтинг: " + userCursor.getCount());
         userList.setAdapter(userAdapter);
     }
 
