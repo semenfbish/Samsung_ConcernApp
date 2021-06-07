@@ -6,10 +6,13 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +31,8 @@ import static java.lang.Thread.sleep;
 public class Fynfyrie extends AppCompatActivity {
     TextView textView27, textView19, textView22, textView23, textView26, textView21, textView17, textView24, textView28, textView33;
     Boolean ROn = true;
+    Button button14;
+    Thread audioThread;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +48,15 @@ public class Fynfyrie extends AppCompatActivity {
         textView24 = findViewById(R.id.textView24);
         textView28 = findViewById(R.id.textView28);
         textView33 = findViewById(R.id.textView33);
-        textView27.setBackgroundColor(Color.RED);
+        /*textView27.setBackgroundColor(Color.RED);
         textView19.setBackgroundColor(Color.RED);
         textView22.setBackgroundColor(Color.RED);
         textView23.setBackgroundColor(Color.RED);
         textView26.setBackgroundColor(Color.RED);
         textView21.setBackgroundColor(Color.RED);
         textView17.setBackgroundColor(Color.RED);
-        textView24.setBackgroundColor(Color.RED);
-        new DEE().execute();
+        textView24.setBackgroundColor(Color.RED);*/
+        button14 = findViewById(R.id.button14);
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -82,51 +87,15 @@ public class Fynfyrie extends AppCompatActivity {
             //Go ahead with recording audio now
             start();
         }
-
+        button14.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MainMenu.class);
+            startActivity(intent);
+            audioThread.destroy();
+        });
+        new DEE().execute();
     }
 
-    class DEE extends AsyncTask {
 
-        @Override
-        protected Void doInBackground(Object[] objects) {
-            while (ROn) {
-                try {
-                    //
-                    textView27.setBackgroundColor(Color.GREEN);
-                    textView22.setBackgroundColor(Color.GREEN);
-                    textView26.setBackgroundColor(Color.GREEN);
-                    textView17.setBackgroundColor(Color.GREEN);
-                    //
-                    textView19.setBackgroundColor(Color.RED);
-                    textView23.setBackgroundColor(Color.RED);
-                    textView21.setBackgroundColor(Color.RED);
-                    textView24.setBackgroundColor(Color.RED);
-                    //
-                    sleep(250);
-                    //
-                    textView27.setBackgroundColor(Color.RED);
-                    textView22.setBackgroundColor(Color.RED);
-                    textView26.setBackgroundColor(Color.RED);
-                    textView17.setBackgroundColor(Color.RED);
-                    //
-                    textView19.setBackgroundColor(Color.GREEN);
-                    textView23.setBackgroundColor(Color.GREEN);
-                    textView21.setBackgroundColor(Color.GREEN);
-                    textView24.setBackgroundColor(Color.GREEN);
-                    //
-                    sleep(250);
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                        }
-
-                    });
-                } catch (Exception e) {
-                }
-                }
-                return null;
-            }
-        }
 
     @Override
     public void onRequestPermissionsResult(int requestCode,
@@ -167,6 +136,7 @@ public class Fynfyrie extends AppCompatActivity {
                     public void run() {
                         display((float) pitchInHz);
                         textView33.setText(""+ (int) pitchInHz);
+
                     }
                 });
             }
@@ -191,6 +161,48 @@ public class Fynfyrie extends AppCompatActivity {
         }
         if (pitchInHz > 200 && pitchInHz < 250){
             textView28.setText("Совет №"  +pitchInHz + ". Держите медиатор так, как захотите. Есть преподователи, которые рассказывают про стандарты хвата. Это слушать не стоит, все мы разные.");
+        }
+    }
+    private class DEE extends AsyncTask {
+
+        @Override
+        protected Void doInBackground(Object[] objects) {
+            while (ROn) {
+                try {
+                    //
+                    textView27.setBackgroundColor(Color.GREEN);
+                    textView22.setBackgroundColor(Color.GREEN);
+                    textView26.setBackgroundColor(Color.GREEN);
+                    textView17.setBackgroundColor(Color.GREEN);
+                    //
+                    textView19.setBackgroundColor(Color.RED);
+                    textView23.setBackgroundColor(Color.RED);
+                    textView21.setBackgroundColor(Color.RED);
+                    textView24.setBackgroundColor(Color.RED);
+                    //
+                    sleep(250);
+                    //
+                    textView27.setBackgroundColor(Color.RED);
+                    textView22.setBackgroundColor(Color.RED);
+                    textView26.setBackgroundColor(Color.RED);
+                    textView17.setBackgroundColor(Color.RED);
+                    //
+                    textView19.setBackgroundColor(Color.GREEN);
+                    textView23.setBackgroundColor(Color.GREEN);
+                    textView21.setBackgroundColor(Color.GREEN);
+                    textView24.setBackgroundColor(Color.GREEN);
+                    //
+                    sleep(250);
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                        }
+
+                    });
+                } catch (Exception e) {
+                }
+            }
+            return null;
         }
     }
 }

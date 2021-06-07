@@ -26,7 +26,6 @@ public class HumList extends AppCompatActivity {
         setContentView(R.layout.activity_hum_list);
         header = (TextView) findViewById(R.id.header);
         userList = (ListView) findViewById(R.id.list);
-
        // databaseHelper = new RaTingSQL(getApplicationContext());
         // db = RaTingSQL.getReadableDatabase();
         Hum = new RaTingSQL(this, "Hum", null, 1);

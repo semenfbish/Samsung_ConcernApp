@@ -21,8 +21,8 @@ import static android.text.util.Linkify.ALL;
 import static java.util.Spliterator.DISTINCT;
 
 public class Rating extends AppCompatActivity{
-    Button button13;
-    TextView textView5, textView46, textView4,textView44;
+    Button button13, button15;
+    TextView textView5, textView46,textView44;
     EditText editTextTextPersonName;
     public SQLiteDatabase db;
     static RaTingSQL Hum;
@@ -38,13 +38,16 @@ public class Rating extends AppCompatActivity{
         Hum = new RaTingSQL(this, "Hum", null, 1);
         db = Hum.getReadableDatabase();
         textView5 = findViewById(R.id.textView5);
-        textView4 = findViewById(R.id.textView4);
         textView46 = findViewById(R.id.textView46);
         textView44 = findViewById(R.id.textView44);
         textView44.setText(String.valueOf(T));
         button13 = findViewById(R.id.button13);
+        button15 = findViewById(R.id.button15);
         editTextTextPersonName = findViewById(R.id.editTextTextPersonName);
-
+        button15.setOnClickListener(v->{
+            Intent intent2 = new Intent(this, MainMenu.class);
+            startActivity(intent2);
+        });
         button13.setOnClickListener(v->{
             String Time = textView44.getText().toString();
             String Name = editTextTextPersonName.getText().toString();
