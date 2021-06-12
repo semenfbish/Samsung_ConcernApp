@@ -826,7 +826,7 @@ public class Menzura extends AppCompatActivity {
     }
     @SuppressLint("SetTextI18n")
     private void Fifth(int pitchInHz) {
-        textView40.setText("Требуемое значение на 12 ладу: 218 ");
+        textView40.setText("Требуемое значение на 12 ладу: 219 ");
         if(pitchInHz < 219) {
             textView43.setText("Уменьшите мензуру");
         }
@@ -839,7 +839,7 @@ public class Menzura extends AppCompatActivity {
     }
     @SuppressLint("SetTextI18n")
     private void Fourth(int pitchInHz) {
-        textView40.setText("Требуемое значение на 12 ладу: 292 ");
+        textView40.setText("Требуемое значение на 12 ладу: 293 ");
         if(pitchInHz < 293) {
             textView43.setText("Уменьшите мензуру");
         }
@@ -852,7 +852,7 @@ public class Menzura extends AppCompatActivity {
     }
     @SuppressLint("SetTextI18n")
     private void Third(int pitchInHz) {
-        textView40.setText("Требуемое значение на 12 ладу: 390 ");
+        textView40.setText("Требуемое значение на 12 ладу: 392 ");
         if(pitchInHz < 392) {
             textView43.setText("Уменьшите мензуру");
         }
@@ -865,7 +865,7 @@ public class Menzura extends AppCompatActivity {
     }
     @SuppressLint("SetTextI18n")
     private void Second(int pitchInHz) {
-        textView40.setText("Требуемое значение на 12 ладу: 492 ");
+        textView40.setText("Требуемое значение на 12 ладу: 493 ");
         if(pitchInHz < 493) {
             textView43.setText("Уменьшите мензуру");
         }
@@ -878,7 +878,7 @@ public class Menzura extends AppCompatActivity {
     }
     @SuppressLint("SetTextI18n")
     private void First(int pitchInHz) {
-        textView40.setText("Требуемое значение на 12 ладу: 656 ");
+        textView40.setText("Требуемое значение на 12 ладу: 659 ");
         if(pitchInHz < 659) {
             textView43.setText("Уменьшите мензуру");
         }

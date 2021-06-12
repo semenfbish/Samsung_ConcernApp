@@ -43,7 +43,7 @@ import static android.view.KeyEvent.KEYCODE_SWITCH_CHARSET;
 
 public class MainActivity extends AppCompatActivity {
     // list of all the notes , string names and their frequencies
-    TextView tt, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView18, textView20;
+    TextView tt, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView18;
     Button button;
     @SuppressLint("WrongViewCast")
     @Override
@@ -63,8 +63,7 @@ public class MainActivity extends AppCompatActivity {
         textView15 = findViewById(R.id.textView15);
         textView16 = findViewById(R.id.textView16);
         textView18 = findViewById(R.id.textView18);
-        textView20 = findViewById(R.id.textView20);
-        textView7.setBackgroundColor(Color.RED);
+        /*textView7.setBackgroundColor(Color.RED);
         textView8.setBackgroundColor(Color.RED);
         textView9.setBackgroundColor(Color.RED);
         textView10.setBackgroundColor(Color.RED);
@@ -72,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         textView12.setBackgroundColor(Color.RED);
         textView13.setBackgroundColor(Color.RED);
         textView14.setBackgroundColor(Color.RED);
-        textView15.setBackgroundColor(Color.RED);
+        textView15.setBackgroundColor(Color.RED);*/
         button.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MainMenu.class);
             startActivity(intent);
