@@ -45,7 +45,7 @@ public class HumList extends AppCompatActivity {
         // создаем адаптер, передаем в него курсор
         userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
                 userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
-        header.setText("Рейтинг: " + userCursor.getCount());
+        header.setText("Rating: " + userCursor.getCount());
         userList.setAdapter(userAdapter);
     }
 

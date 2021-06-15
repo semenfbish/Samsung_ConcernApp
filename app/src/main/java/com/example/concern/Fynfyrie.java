@@ -29,7 +29,7 @@ import be.tarsos.dsp.pitch.PitchProcessor;
 import static java.lang.Thread.sleep;
 
 public class Fynfyrie extends AppCompatActivity {
-    TextView textView28, textView33;
+    TextView textView28;
     Button button14;
 
     @Override
@@ -37,7 +37,6 @@ public class Fynfyrie extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fynfyrie);
         textView28 = findViewById(R.id.textView28);
-        textView33 = findViewById(R.id.textView33);
         button14 = findViewById(R.id.button14);
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.RECORD_AUDIO)
@@ -114,8 +113,6 @@ public class Fynfyrie extends AppCompatActivity {
                     @Override
                     public void run() {
                         display((float) pitchInHz);
-                        textView33.setText("" + (int) pitchInHz);
-
                     }
                 });
             }
@@ -135,13 +132,13 @@ public class Fynfyrie extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     private void slyxach(int pitchInHz) {
         if (pitchInHz > 100 && pitchInHz < 150) {
-            textView28.setText("Совет №" + pitchInHz + ". Always play standing up, so you create a comfort zone.");
+            textView28.setText("Advice №" + pitchInHz + ". Always play standing up, so you create a comfort zone.");
         }
         if (pitchInHz > 150 && pitchInHz < 200) {
-            textView28.setText("Совет №" + pitchInHz + ". Never believe guitarists who discuss the influence of wood on the sound of an electric guitar.");
+            textView28.setText("Advice №" + pitchInHz + ". Never believe guitarists who discuss the influence of wood on the sound of an electric guitar.");
         }
         if (pitchInHz > 200 && pitchInHz < 250) {
-            textView28.setText("Совет №" + pitchInHz + ". Hold the pick any way you want. There are teachers who talk about grip standards. This is not worth listening to, we are all different.");
+            textView28.setText("Advice №" + pitchInHz + ". Hold the pick any way you want. There are teachers who talk about grip standards. This is not worth listening to, we are all different.");
         }
     }
 }

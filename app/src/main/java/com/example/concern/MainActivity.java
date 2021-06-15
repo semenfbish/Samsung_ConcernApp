@@ -43,14 +43,13 @@ import static android.view.KeyEvent.KEYCODE_SWITCH_CHARSET;
 
 public class MainActivity extends AppCompatActivity {
     // list of all the notes , string names and their frequencies
-    TextView tt, textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView18;
+    TextView textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14, textView15, textView16, textView18;
     Button button;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        tt = findViewById(R.id.textView2);
         button = findViewById(R.id.button);
         textView7 = findViewById(R.id.textView7);
         textView8 = findViewById(R.id.textView8);
@@ -145,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        tt.setText("" + (int) pitchInHz);
                         display((float) pitchInHz);
 
                     }
