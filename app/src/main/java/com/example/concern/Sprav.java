@@ -91,23 +91,4 @@ Button button8,button11,button12;
             e.printStackTrace();
         }
     }
-    private static void SaveImage2(Bitmap mIcon11) {
-
-        String root = Environment.getExternalStorageDirectory().getAbsolutePath();
-        File myDir = new File(root + "/saved_images");
-        myDir.mkdirs();
-
-        String fname = "Image-Rus-guitar-keyboard.jpg";
-        File file = new File (myDir, fname);
-        if (file.exists ()) file.delete();
-        try {
-            FileOutputStream out = new FileOutputStream(file);
-            mIcon11.compress(Bitmap.CompressFormat.JPEG, 90, out);
-            out.flush();
-            out.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

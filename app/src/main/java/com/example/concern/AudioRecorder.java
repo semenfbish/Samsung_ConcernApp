@@ -3,6 +3,7 @@ package com.example.concern;
 import android.annotation.SuppressLint;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.view.inputmethod.InputConnection;
 
@@ -20,17 +21,16 @@ import be.tarsos.dsp.pitch.PitchDetectionHandler;
 import be.tarsos.dsp.pitch.PitchDetectionResult;
 import be.tarsos.dsp.pitch.PitchProcessor;
 
+import static java.lang.Thread.sleep;
+
 public class AudioRecorder extends AppCompatActivity {
     Thread audioThread;
     public boolean usingMicro = false;
-    public int language = 1;
-    private KeyboardView kv;
-    private Keyboard keyboard;
-    private boolean caps = false;
+    public int language = 2;
     public void start(InputConnection ic) {
         // getting pitch from live audio , and sending it to processPitch()
 
-        int SAMPLE_RATE = 44100;
+        int SAMPLE_RATE = 17100;
         int BUFFER_SIZE = 1024 * 4;
         int OVERLAP = 768 * 4;
 
@@ -182,7 +182,7 @@ public class AudioRecorder extends AppCompatActivity {
                     }
                 }
             }catch (Exception E){
-                System.out.println("cock");
+                System.out.println("Rock");
             }
             try {
             if (language == 2){
@@ -196,7 +196,7 @@ public class AudioRecorder extends AppCompatActivity {
 
             }
             }catch (Exception E){
-                System.out.println("cock");
+                System.out.println("Rock");
             }
         }
     }

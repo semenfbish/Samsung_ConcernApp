@@ -46,23 +46,23 @@ public class IME extends InputMethodService implements KeyboardView.OnKeyboardAc
             case  MicroKey:
                 if (!audioRecorder.usingMicro){
                     audioRecorder.usingMicro = true;
-                    Toast.makeText(getApplicationContext(),"ДАВАЙ ГОВОРИТЬ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Lat's Rock!",Toast.LENGTH_SHORT).show();
                     audioRecorder.start(ic);
                 }else{
                     audioRecorder.usingMicro = false;
-                    Toast.makeText(getApplicationContext(),"ХВАТИТ ГОВОРИТЬ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"No More Rock!",Toast.LENGTH_SHORT).show();
 
                     audioRecorder.stop();
                 }
             case language:
                 if (audioRecorder.language == 1){
                     audioRecorder.language = 2;
-                    Toast.makeText(getApplicationContext(),"ЯЗЫК ПЕРЕКЛЮЧЁН НА РУССКИЙ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Ru",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 if (audioRecorder.language == 2){
                     audioRecorder.language = 1;
-                    Toast.makeText(getApplicationContext(),"ЯЗЫК ПЕРЕКЛЮЧЁН НА АНГЛИЙСКИЙ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"En",Toast.LENGTH_SHORT).show();
                     break;
                 }
                 break;

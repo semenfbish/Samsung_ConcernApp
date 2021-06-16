@@ -41,7 +41,7 @@ public class HumList extends AppCompatActivity {
         //получаем данные из бд в виде курсора
         userCursor = db.rawQuery("select * from " + RATING , null);
         // определяем, какие столбцы из курсора будут выводиться в ListView
-        String[] headers = new String[]{RaTingSQL.NAME, RaTingSQL.TIME};
+        String[] headers = new String[]{ RaTingSQL.NAME, RaTingSQL.TIME};
         // создаем адаптер, передаем в него курсор
         userAdapter = new SimpleCursorAdapter(this, android.R.layout.two_line_list_item,
                 userCursor, headers, new int[]{android.R.id.text1, android.R.id.text2}, 0);
