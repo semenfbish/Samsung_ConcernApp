@@ -69,8 +69,7 @@ public class Fynfyrie extends AppCompatActivity {
             start();
         }
         button14.setOnClickListener(v -> {
-            Intent intent = new Intent(this, MainMenu.class);
-            startActivity(intent);
+           finish();
         });
     }
 

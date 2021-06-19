@@ -45,8 +45,7 @@ public class Rating extends AppCompatActivity{
         button15 = findViewById(R.id.button15);
         editTextTextPersonName = findViewById(R.id.editTextTextPersonName);
         button15.setOnClickListener(v->{
-            Intent intent2 = new Intent(this, MainMenu.class);
-            startActivity(intent2);
+            finish();
         });
         button13.setOnClickListener(v->{
             String Time = textView44.getText().toString();

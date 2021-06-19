@@ -53,8 +53,7 @@ public class MainGame extends AppCompatActivity {
         button5 = findViewById(R.id.button5);
 
         button4.setOnClickListener(v -> {
-            Intent intent = new Intent(MainGame.this, MainMenu.class);
-            startActivity(intent);
+            finish();
         });
         button5.setOnClickListener(v -> {
             if (editText3.getText().toString().equalsIgnoreCase(A)) {

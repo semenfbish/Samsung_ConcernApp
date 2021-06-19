@@ -72,8 +72,7 @@ public class MainActivity extends AppCompatActivity {
         textView14.setBackgroundColor(Color.RED);
         textView15.setBackgroundColor(Color.RED);*/
         button.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, MainMenu.class);
-            startActivity(intent);
+            finish();
         });
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.RECORD_AUDIO)

@@ -31,8 +31,7 @@ public class Menzura extends AppCompatActivity {
         setContentView(R.layout.activity_menzura);
         button7 = findViewById(R.id.button7);
         button7.setOnClickListener(v -> {
-            Intent intent = new Intent(Menzura.this, MainMenu.class);
-            startActivity(intent);
+            finish();
         });
         textView29 = findViewById(R.id.textView29);
         textView30 = findViewById(R.id.textView30);

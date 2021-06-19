@@ -30,7 +30,8 @@
                 <action android:name="android.view.InputMethod" />
             </intent-filter>
         </service>
-        <activity android:name=".HumList"></activity>
+
+        <activity android:name=".HumList" />
         <activity android:name=".Sprav" />
         <activity android:name=".Fynfyrie" />
         <activity android:name=".Menzura" />

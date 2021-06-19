@@ -32,8 +32,7 @@ Button button8,button11,button12;
         button11 = findViewById(R.id.button11);
         button12 = findViewById(R.id.button12);
         button8.setOnClickListener(v ->{
-            Intent intent = new Intent(Sprav.this, MainMenu.class);
-            startActivity(intent);
+            finish();
         });
         button11.setOnClickListener(v -> {
             new DownloadImageTask(imageView, "EN_Key").execute("https://raw.githubusercontent.com/semenfbish/ShuraleGi/main/rus_key.png");
