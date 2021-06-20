@@ -15,7 +15,6 @@ public class IME extends InputMethodService implements KeyboardView.OnKeyboardAc
     private Keyboard keyboard;
     private final int MicroKey = 100012;
     private final int language = 1;
-    private boolean usingMicro = false;
     AudioRecorder audioRecorder;
 
     private boolean caps = false;

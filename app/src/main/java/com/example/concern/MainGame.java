@@ -33,9 +33,8 @@ public class MainGame extends AppCompatActivity {
     Button button4, button5;
     TextView textView3, textView45;
     EditText editText3;
-    String A = "samsung";
-    int Folt = 0;
-    int T = 0;
+    String Word = "samsung";
+    int Sec = 0;
     boolean Time = true;
 
     @SuppressLint("SetTextI18n")
@@ -43,12 +42,12 @@ public class MainGame extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_game);
-        new Tim().execute();
+        new Time().execute();
         editText3 = findViewById(R.id.editText3);
         textView3 = findViewById(R.id.textView3);
         textView45 = findViewById(R.id.textView45);
         //textView3.setText("samsung is better than iphone!");
-        textView3.setText(A);
+        textView3.setText(Word);
         button4 = findViewById(R.id.button4);
         button5 = findViewById(R.id.button5);
 
@@ -56,13 +55,13 @@ public class MainGame extends AppCompatActivity {
             finish();
         });
         button5.setOnClickListener(v -> {
-            if (editText3.getText().toString().equalsIgnoreCase(A)) {
+            if (editText3.getText().toString().equalsIgnoreCase(Word)) {
                 Toast.makeText(getApplicationContext(),
                         "Биг зур яхши",
                         Toast.LENGTH_SHORT).show();
-
+                Time = false;
                 Intent intent = new Intent(MainGame.this, Rating.class);
-                intent.putExtra("Time", T);
+                intent.putExtra("Time", Sec);
                 startActivity(intent);
 
 
@@ -71,8 +70,8 @@ public class MainGame extends AppCompatActivity {
                         "бик начар, яз! +5 секунд!",
                         Toast.LENGTH_SHORT).show();
                 try {
-                    T = T + 5;
-                    textView45.setText(String.valueOf(T));
+                    Sec = Sec + 5;
+                    textView45.setText(String.valueOf(Sec));
                 } catch (Exception E) {
 
                 }
@@ -108,7 +107,7 @@ public class MainGame extends AppCompatActivity {
             //Go ahead with recording audio now
         }
     }
-    class Tim extends AsyncTask {
+    class Time extends AsyncTask {
 
         @Override
         protected Void doInBackground(Object[] objects) {
@@ -118,8 +117,8 @@ public class MainGame extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            textView45.setText(String.valueOf(T));
-                            T++;
+                            textView45.setText(String.valueOf(Sec));
+                            Sec++;
                         }
                     });
                 } catch (Exception e) {}

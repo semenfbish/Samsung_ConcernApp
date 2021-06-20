@@ -47,15 +47,6 @@ public class Menzura extends AppCompatActivity {
         textView41 = findViewById(R.id.textView41);
         textView42 = findViewById(R.id.textView42);
         textView43 = findViewById(R.id.textView43);
-        /*textView29.setBackgroundColor(Color.RED);
-        textView30.setBackgroundColor(Color.RED);
-        textView31.setBackgroundColor(Color.RED);
-        textView32.setBackgroundColor(Color.RED);
-        textView34.setBackgroundColor(Color.RED);
-        textView35.setBackgroundColor(Color.RED);
-        textView36.setBackgroundColor(Color.RED);
-        textView37.setBackgroundColor(Color.RED);
-        textView38.setBackgroundColor(Color.RED);*/
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED) {

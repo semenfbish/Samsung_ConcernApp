@@ -18,8 +18,8 @@
         <Key android:codes="48" android:keyLabel="0" android:keyEdgeFlags="right"/>
     </Row>
     <Row>
-        <Key android:codes="100012" android:keyLabel="МИКРО" android:keyWidth="50%p" android:isRepeatable="true" android:keyEdgeFlags="left"/>
-        <Key android:codes="1" android:keyLabel="СМЕНИТЬ ЯЗЫК" android:keyWidth="50%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
+        <Key android:codes="100012" android:keyLabel="ROCK" android:keyWidth="50%p" android:isRepeatable="true" android:keyEdgeFlags="left"/>
+        <Key android:codes="1" android:keyLabel="Сhange the language" android:keyWidth="50%p" android:isRepeatable="true" android:keyEdgeFlags="right"/>
     </Row>
     <Row android:rowEdgeFlags="bottom">
         <Key android:codes="32" android:keyLabel="SPACE" android:keyWidth="50%p" android:isRepeatable="true" android:keyEdgeFlags="left"/>

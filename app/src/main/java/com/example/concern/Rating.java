@@ -31,16 +31,16 @@ public class Rating extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating);
-        int T;
+        int Sec;
         int defaultValue = 0;
         Intent intent = getIntent();
-        T = intent.getIntExtra("Time", defaultValue);
+        Sec = intent.getIntExtra("Time", defaultValue);
         Hum = new RaTingSQL(this, "Hum", null, 1);
         db = Hum.getReadableDatabase();
         textView5 = findViewById(R.id.textView5);
         textView46 = findViewById(R.id.textView46);
         textView44 = findViewById(R.id.textView44);
-        textView44.setText(String.valueOf(T));
+        textView44.setText(String.valueOf(Sec));
         button13 = findViewById(R.id.button13);
         button15 = findViewById(R.id.button15);
         editTextTextPersonName = findViewById(R.id.editTextTextPersonName);
