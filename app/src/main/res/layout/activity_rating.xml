@@ -13,10 +13,8 @@
         android:layout_height="40dp"
         android:layout_marginStart="149dp"
         android:layout_marginLeft="149dp"
-        android:layout_marginTop="88dp"
         android:layout_marginEnd="149dp"
         android:layout_marginRight="149dp"
-        android:layout_marginBottom="22dp"
         android:background="@drawable/bac"
         android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
@@ -24,12 +22,12 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/black"
         android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView44"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintVertical_bias="0.284" />
 
     <TextView
         android:id="@+id/textView5"
@@ -37,7 +35,7 @@
         android:layout_height="47dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="36dp"
         android:layout_marginRight="36dp"
         android:background="@drawable/bac"
@@ -59,62 +57,52 @@
         android:id="@+id/textView44"
         android:layout_width="51dp"
         android:layout_height="47dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginLeft="172dp"
-        android:layout_marginEnd="174dp"
-        android:layout_marginRight="174dp"
-        android:layout_marginBottom="508dp"
         android:background="@drawable/bac"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
         style="@android:style/Theme.Black"
         android:layout_width="275dp"
         android:layout_height="63dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginLeft="102dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginRight="96dp"
         android:background="#daffff"
         android:ems="10"
         android:hint="Your Name"
         android:inputType="textPersonName"
         android:textColor="@color/black"
         android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.548"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView44" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button13"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:layout_marginBottom="292dp"
         android:fontFamily="sans-serif-black"
         android:text="Rating"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:backgroundTint="#daffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622" />
 
     <Button
         android:id="@+id/button15"
         android:layout_width="150dp"
         android:layout_height="70dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginBottom="292dp"
         android:fontFamily="sans-serif-black"
         android:text="Menu"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -123,5 +111,9 @@
         android:textSize="18sp"
         app:backgroundTint="#daffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622" />
 </androidx.constraintlayout.widget.ConstraintLayout>
