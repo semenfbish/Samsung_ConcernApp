@@ -79,7 +79,8 @@ Button button8,button11,button12;
 
         String fname = fileName + ".jpg";
         File file = new File (myDir, fname);
-        if (file.exists ()) file.delete();
+        if (file.exists ())
+            file.delete();
         try {
             FileOutputStream out = new FileOutputStream(file);
             finalBitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
