@@ -130,7 +130,6 @@ public class AudioRecorder extends AppCompatActivity {
         russes.put(415, 1088);
         russes.put(440, 1086);
         russes.put(466, 1087);
-        //russes.put(492, 1092);
         russes.put(523, 48);
         russes.put(552, 49);
         russes.put(585, 50);
@@ -185,16 +184,15 @@ public class AudioRecorder extends AppCompatActivity {
                 System.out.println("Rock");
             }
             try {
-            if (language == 2){
-                int kk = russes.get(pitchInHz);
-                char code = (char) kk;
-                if (pitchInHz == 492 || pitchInHz == 491 || pitchInHz == 493) {
-                    ic.deleteSurroundingText(1, 0);
-                }else{
-                    ic.commitText(String.valueOf(code), 1);
+                if (language == 2){
+                    int kk = russes.get(pitchInHz);
+                    char code = (char) kk;
+                    if (pitchInHz == 492 || pitchInHz == 491 || pitchInHz == 493) {
+                        ic.deleteSurroundingText(1, 0);
+                    }else{
+                        ic.commitText(String.valueOf(code), 1);
+                    }
                 }
-
-            }
             }catch (Exception E){
                 System.out.println("Rock");
             }

@@ -15,6 +15,7 @@ public class IME extends InputMethodService implements KeyboardView.OnKeyboardAc
     private Keyboard keyboard;
     private final int MicroKey = 100012;
     private final int language = 1;
+    int c = 1;
     AudioRecorder audioRecorder;
 
     private boolean caps = false;
@@ -43,15 +44,20 @@ public class IME extends InputMethodService implements KeyboardView.OnKeyboardAc
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
             case  MicroKey:
-                if (!audioRecorder.usingMicro){
+                if (!audioRecorder.usingMicro&&c==1){
                     audioRecorder.usingMicro = true;
                     Toast.makeText(getApplicationContext(),"Lat's Rock!",Toast.LENGTH_SHORT).show();
                     audioRecorder.start(ic);
+                    c = 2;
                 }else{
-                    audioRecorder.usingMicro = false;
+                    //audioRecorder.usingMicro = false;
                     Toast.makeText(getApplicationContext(),"No More Rock!",Toast.LENGTH_SHORT).show();
 
                     audioRecorder.stop();
+                }
+                if(c==2&&!audioRecorder.usingMicro) {
+                    audioRecorder.usingMicro = true;
+                    Toast.makeText(getApplicationContext(),"Lat's Rock!",Toast.LENGTH_SHORT).show();
                 }
             case language:
                 if (audioRecorder.language == 1){
